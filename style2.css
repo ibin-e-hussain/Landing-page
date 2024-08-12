@@ -1,0 +1,161 @@
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .cont {
+            
+            width: 90%;
+            margin: auto;
+            position: relative;
+        }
+
+       
+
+        .employee-list-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .employee-list {
+            margin: auto;
+            width: 97%;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .employee {
+            flex: 0 0 33.33%;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .employee img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            font-size: 14px;
+            font-weight: lighter;
+            opacity: 80%;
+            text-align: start;
+            flex-grow: 1;
+            margin-bottom: 20px;
+            padding: 0% 10px 0% 10px;
+        }
+
+        .profile-bottom {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-button {
+            border-radius: 3px;
+            position: absolute;
+            top: 30%;
+            transform: translateY(-50%);
+            background-color: rgba(55, 53, 53, 0.5);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 12px;
+        }
+
+        .nav-button.left {
+            left: 0px; /* Adjust to be fully visible */
+        
+        }
+
+        .nav-button.right {
+            right: 0px; /* Adjust to be fully visible */
+        }
+
+        .dots {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .profile-bottom p{
+            font-size: 19px;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+         @media (min-width:1440px) {
+
+            .intro {
+                font-size: 0.97vw;
+            }
+            .profile-bottom p{
+                font-size: 1.32vw;
+            }
+
+         }
+
+        @media (max-width: 768px) {
+            .nav-button {
+                display: none; /* Hide navigation buttons on small screens */
+            }
+
+            .employee-list {
+                overflow-x: auto; /* Enable horizontal scrolling */
+                overflow-y: hidden; /* Hide vertical scrolling */
+                scroll-snap-type: x mandatory; /* Ensure snapping to cards */
+            }
+
+            .employee {
+                flex: 0 0 100%; /* Each card takes full width */
+                scroll-snap-align: center; /* Snap to center of card */
+            }
+
+            .dots {
+                display: block; /* Show dots for navigation */
+            }
+        }
+        @media (max-width:576px) {
+
+            .cont{
+               
+                padding-top:0px;
+            }
+
+           
+            .profile-bottom{
+                justify-content: center;
+                align-items: center;
+            }
+            .intro{
+                font-size: 16px;
+                font-weight: 200;
+                text-align: center;
+                font-style: italic;
+            }
+            .cont h1{
+               margin-top: 40px;
+                font-size: 32px;
+            }
+            .employee{
+               padding-left: 0%;
+               padding-right: 0%;
+            }
+        }
